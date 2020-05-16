@@ -1,0 +1,20 @@
+{
+  "name": "svgjs_with_constraint",
+  "version": "1.0.0",
+  "description": "Allow positioning of elements relative to other elements. For example \"svg.rect(10,20).with({n: otherElement.sw()})\"",
+  "main": "src/with_plugin.js",
+  "url": "https://github.io/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.9.6"
+  }
+}
