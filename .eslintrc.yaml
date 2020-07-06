@@ -1,0 +1,9 @@
+extends:
+- standard
+rules:
+  operator-linebreak: [error, before]
+  object-curly-spacing: [error, always]
+  indent: [error, 2, { flatTernaryExpressions: true }]
+  padded-blocks: off
+  no-multi-spaces: 0   # I added these. Sorry, but I like aligned tables...
+  key-spacing: 0       # DT
