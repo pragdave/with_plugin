@@ -2,19 +2,69 @@
   "name": "svgjs_with_constraint",
   "version": "1.0.0",
   "description": "Allow positioning of elements relative to other elements. For example \"svg.rect(10,20).with({n: otherElement.sw()})\"",
-  "main": "src/with_plugin.js",
-  "url": "https://github.io/",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": [
+    "svg.js",
+    "constraint",
+    "positioning"
+  ],
+  "bugs": "https://github.com/pragdave/with_plugin/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Dave Thomas"
   },
-  "author": "",
-  "licenses": [
+  "main": "dist/svg.with_constraint.js",
+  "unpkg": "dist/svg.with_constraint.min.js",
+  "jsdelivr": "dist/svg.with_constraint.min.js",
+  "browser": "dist/svg.with_constraint.esm.js",
+  "module": "src/svg.with_constraint.js",
+  "files": [
+    "/dist",
+    "/src",
+    "./svg.with_constraint.js.d.ts"
+  ],
+  "typings": "./svg.with_constraint.js.d.ts",
+  "contributors": [
     {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/mit-license.php"
+      "name": "Dave Thomas",
+      "url": "https://pragdave.me"
     }
   ],
+  "homepage": "https://github.com/pragdave/with_plugin/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pragdave/with_plugin"
+  },
+  "scripts": {
+    "test": "jasmine \"__test__/*.js\"",
+    "build": "npm run fix && npm run rollup",
+    "fix": "npx eslint ./src --fix",
+    "lint": "npx eslint ./src",
+    "rollup": "npx rollup -c .config/rollup.config.js",
+    "zip": "zip -j dist/svg.with_constraint.js.zip -- LICENSE.md README.md dist/svg.with_constraint.js dist/svg.with_constraint.js.map dist/svg.with_constraint.min.js dist/svg.with_constraint.min.js.map",
+    "prepublishOnly": "rm -rf ./dist && npm run build",
+    "postpublish": "npm run zip",
+    "format": "prettier-standard --format"
+  },
+  "engines": {
+    "node": ">= 13.0.0"
+  },
+  "prettier": {
+    "printWidth": 120
+  },
+  "dependencies": {
+    "@svgdotjs/svg.js": "^3.0.16"
+  },
   "devDependencies": {
-    "@babel/core": "^7.9.6"
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@rollup/plugin-babel": "^5.0.0",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-multi-entry": "^3.0.1",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "rollup": "^2.10.3",
+    "rollup-plugin-filesize": "^9.0.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "standard": "^14.3.4"
   }
 }
